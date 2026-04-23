@@ -1,8 +1,12 @@
 from openai import OpenAI
 import torch 
-OPENAI_API_KEY='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'
+import os
+from dotenv import load_dotenv
 
-client = OpenAI(api_key=OPENAI_API_KEY)
+api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key)
+
+
 
 def get_embeddings(chunks):
     response = client.embeddings.create(
@@ -63,6 +67,7 @@ block_size = 8
 batch_size = 4
 
 def get_batch(split):
+
     # print(torch.randint(0,7,(4,)))
     ix = torch.randint(0,len(train_data)-block_size,(batch_size,))
     print(ix,"starting index")
