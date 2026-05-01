@@ -3,34 +3,34 @@ import torch
 import os
 from dotenv import load_dotenv
 
-api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key)
+# api_key = os.getenv("OPENAI_API_KEY")
+# client = OpenAI(api_key)
 
 
 
-def get_embeddings(chunks):
-    response = client.embeddings.create(
-    input=chunks,
-    model="text-embedding-3-small",
-    )
+# def get_embeddings(chunks):
+#     response = client.embeddings.create(
+#     input=chunks,
+#     model="text-embedding-3-small",
+#     )
 
-    return [x.embedding for x in response.data]
+#     return [x.embedding for x in response.data]
 
-def chunk(fileData, chunkSize, overlap):
-    # Validate input
-    if overlap >= chunkSize:
-        raise ValueError("overlap must be smaller than chunkSize")
+# def chunk(fileData, chunkSize, overlap):
+#     # Validate input
+#     if overlap >= chunkSize:
+#         raise ValueError("overlap must be smaller than chunkSize")
 
-    chunks = []
-    curr = 0
+#     chunks = []
+#     curr = 0
 
-    while curr < len(fileData):
-        data = fileData[curr:curr + chunkSize]
-        chunks.append(data)
+#     while curr < len(fileData):
+#         data = fileData[curr:curr + chunkSize]
+#         chunks.append(data)
 
-        curr += (chunkSize - overlap)
+#         curr += (chunkSize - overlap)
 
-    return chunks
+#     return chunks
 
 
 # Usage
