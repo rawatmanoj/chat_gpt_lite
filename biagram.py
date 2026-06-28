@@ -38,6 +38,21 @@ for i in range(50):
     # print(itos[ix])
     if ix == 0:
         break;
+
+# print(P,"pppppp")
+
+for word in words[:3]:
+    ch = ['.'] + list(word) + ['.']
+    #print(ch)
+    for char1,char2 in zip(ch,ch[1:]):
+        print(char1,char2)
+        ix = stoi[char1]
+        iy = stoi[char2]
+        print(P[ix,iy])
+        N[stoi[char1],stoi[char2]] += 1
+
+
+print('bye')
     
 print(''.join(res))
 print('biagram')
