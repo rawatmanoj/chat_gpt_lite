@@ -50,3 +50,6 @@ for word in words[:3]:
         iy = stoi[char2]
         print(P[ix,iy])
         N[stoi[char1],stoi[char2]] += 1
+
+
+print('bye')
