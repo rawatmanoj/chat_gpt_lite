@@ -53,3 +53,6 @@ for word in words[:3]:
 
 
 print('bye')
+    
+print(''.join(res))
+print('biagram')
